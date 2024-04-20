@@ -55,7 +55,7 @@ export function Conversor() {
 					<div>
 						<label htmlFor="1st_currency">Primera divisa</label>
 						<div className={inputFlex}>
-							<input type="text" placeholder="0.00" id="1st_currency" ref={valueToConvertRef} required />
+							<input type="number" placeholder="0" id="1st_currency" ref={valueToConvertRef} required />
 							<select
 								name="1st_currency_options"
 								id="1st_currency_options"
