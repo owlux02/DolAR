@@ -9,7 +9,7 @@ export function Nav() {
 
 			<div className={links}>
 				<a href="/">Inicio</a>
-				<a href="https://github.com/martinval11/dolar" target="_blank" rel="noopener noreferrer">
+				<a href="https://github.com/martinval11/DolAR" target="_blank" rel="noopener noreferrer">
 					GitHub
 				</a>
 			</div>
