@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+.notFoundImg {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}

@@ -1,9 +1,13 @@
 import { render } from 'preact';
 import { Route, Switch } from 'wouter';
+
 import { App } from './app.tsx';
-import { Nav } from './components/nav/nav.tsx';
+
 import { OtherCurrencies } from './pages/otherCurrencies/page.tsx';
 import { Conversor } from './pages/conversor/page.tsx';
+
+import { Nav } from './components/nav/nav.tsx';
+import { NotFound } from './components/notFound/notFound.tsx';
 
 import '@picocss/pico/css/pico.min.css';
 import './index.css';
@@ -30,8 +34,8 @@ render(
 
 			{/* Default route in a switch */}
 			<Route>
-        <h1>404 no encontrado</h1>
-      </Route>
+				<NotFound />
+			</Route>
 		</Switch>
 	</>,
 	document.getElementById('app')!,
