@@ -4,11 +4,13 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+  padding: 1rem;
 }
 
 .currencyCard {
   border-top: 4px solid var(--pico-primary);
-  min-width: 440px;
+  width: 100%;
+  max-width: 440px;
 }
 
 .currencyInfo {
@@ -23,6 +25,7 @@
 .description {
   font-weight: 400;
   font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .price {
@@ -33,5 +36,7 @@
 .otherCurrencies {
   display: flex;
   flex-direction: column;
+  flex-flow: wrap;
+  justify-content: center;
   gap: 0.5rem;
 }
