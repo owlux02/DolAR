@@ -10,7 +10,8 @@ export function Nav() {
 
 			<div className={links}>
 				<Link href="/">Inicio</Link>
-        <Link href="/otrasDivisas">Otras divisas</Link>
+				<Link href="/otrasDivisas">Otras divisas</Link>
+				<Link href="/conversor">Conversor</Link>
 				<a href="https://github.com/martinval11/DolAR" target="_blank" rel="noopener noreferrer">
 					GitHub
 				</a>

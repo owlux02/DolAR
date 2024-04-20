@@ -1,0 +1,53 @@
+.container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form {
+  margin-bottom: 1rem;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputFlex {
+  display: flex;
+  align-items: center;
+}
+
+.inputFlex input {
+  border-radius: 0.25rem 0 0 0.25rem;
+  border-right: none;
+  height: fit-content;
+  margin-bottom: 0;
+}
+
+.inputFlex select {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.inputFieldBottom {
+  margin-bottom: 0;
+}
+
+.outputContainer {
+  background-color: var(--pico-form-element-border-color);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+@media screen and (width <= 800px) {
+  .inputContainer {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
