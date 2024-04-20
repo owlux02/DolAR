@@ -19,11 +19,17 @@
 
 .menuMobileButton {
   display: none;
+  background-color: transparent;
+  border: none;
 }
 
 @media screen and (width <= 800px) {
+  .nav {
+    padding: 0.5rem 1.5rem;
+  }
+
   .menuMobileButton {
-    display: block;
+    display: flex;
   }
 
   .links {

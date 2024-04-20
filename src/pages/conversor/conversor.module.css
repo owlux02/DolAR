@@ -45,6 +45,13 @@
   font-size: 1.5rem;
 }
 
+.invertCurrenciesButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 @media screen and (width <= 800px) {
   .inputContainer {
     flex-direction: column;
