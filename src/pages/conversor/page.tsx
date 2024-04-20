@@ -53,12 +53,12 @@ export function Conversor() {
 			<form onSubmit={convertCurrencies} className={form}>
 				<div className={inputContainer}>
 					<div>
-						<label htmlFor="1st currency">Primera divisa</label>
+						<label htmlFor="1st_currency">Primera divisa</label>
 						<div className={inputFlex}>
-							<input type="text" placeholder="0.00" id="1st currency" ref={valueToConvertRef} required />
+							<input type="text" placeholder="0.00" id="1st_currency" ref={valueToConvertRef} required />
 							<select
-								name="1st currency"
-								id="1st currency"
+								name="1st_currency_options"
+								id="1st_currency_options"
 								onChange={(e) => {
 									const event = e.target as HTMLSelectElement;
 									setFirstCurrency(event.value);
@@ -102,11 +102,11 @@ export function Conversor() {
 					</button>
 
 					<div>
-						<label htmlFor="2nd currency">Segunda divisa</label>
+						<label htmlFor="2nd_currency_options">Segunda divisa</label>
 
 						<select
-							name="2nd currency"
-							id="2nd currency"
+							name="2nd_currency_options"
+							id="2nd_currency_options"
 							onChange={(e) => {
 								const event = e.target as HTMLSelectElement;
 								setSecondCurrency(event.value);
