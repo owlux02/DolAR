@@ -124,7 +124,7 @@ export function Conversor() {
               <path d="m8 21-4-4 4-4" />
               <path d="M4 17h16" />
             </svg>
-            <span>Invertir divisas</span>
+            <span>Invertir</span>
           </button>
 
           <div>
