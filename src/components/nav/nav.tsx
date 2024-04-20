@@ -19,7 +19,7 @@ export function Nav() {
 				</a>
 			</div>
 
-			<button onClick={() => setOpenMenu(!openMenu)} className={menuMobileButton}>
+			<button onClick={() => setOpenMenu(!openMenu)} className={menuMobileButton} aria-label="Menu de Navegación">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
