@@ -29,7 +29,9 @@ render(
 			<Route path="/conversor" component={Conversor} />
 
 			{/* Default route in a switch */}
-			<Route>404: No such page!</Route>
+			<Route>
+        <h1>404 no encontrado</h1>
+      </Route>
 		</Switch>
 	</>,
 	document.getElementById('app')!,
