@@ -14,6 +14,35 @@
 
 .links {
   display: flex;
-
   gap: 1rem;
+}
+
+.menuMobileButton {
+  display: none;
+}
+
+@media screen and (width <= 800px) {
+  .menuMobileButton {
+    display: block;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .linksMobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .linksMobile a {
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--pico-border-radius);
+  }
+
+  .linksMobile a:hover {
+    background-color: var(--pico-form-element-border-color);
+  }
 }
