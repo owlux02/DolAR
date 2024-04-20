@@ -16,8 +16,8 @@ export function Conversor() {
 	const convertCurrencies = async (event: SubmitEvent) => {
 		event.preventDefault();
 
-		const data = localStorage.getItem('data');
-		const otherCurrenciesData = localStorage.getItem('dataOtherCurrencies');
+		const data = sessionStorage.getItem('data');
+		const otherCurrenciesData = sessionStorage.getItem('dataOtherCurrencies');
 
 		if (data && otherCurrenciesData) {
 			const mergedData = JSON.parse(data).concat(JSON.parse(otherCurrenciesData)).concat({

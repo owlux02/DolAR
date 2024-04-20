@@ -13,7 +13,7 @@ export function App() {
 				const data = await response.json();
 				setData(data);
 
-				localStorage.setItem('data', JSON.stringify(data));
+				sessionStorage.setItem('data', JSON.stringify(data));
 			} else {
 				throw new Error(`HTTP Error: ${response.status}`);
 			}
@@ -23,7 +23,7 @@ export function App() {
 	};
 
 	useEffect(() => {
-		const data = localStorage.getItem('data');
+		const data = sessionStorage.getItem('data');
 		if (data) {
 			setData(JSON.parse(data));
 		} else {

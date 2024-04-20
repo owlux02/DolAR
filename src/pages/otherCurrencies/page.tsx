@@ -28,14 +28,14 @@ export function OtherCurrencies() {
 			const uyu = await getCurrency('uyu');
 
 			setData([eur, brl, clp, uyu]);
-			localStorage.setItem('dataOtherCurrencies', JSON.stringify([eur, brl, clp, uyu]));
+			sessionStorage.setItem('dataOtherCurrencies', JSON.stringify([eur, brl, clp, uyu]));
 		} catch (error) {
 			console.error(`Error during request: ${error}`);
 		}
 	};
 
 	useEffect(() => {
-		const data = localStorage.getItem('dataOtherCurrencies');
+		const data = sessionStorage.getItem('dataOtherCurrencies');
 		if (data) {
 			setData(JSON.parse(data));
 		} else {
