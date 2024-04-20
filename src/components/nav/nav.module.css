@@ -21,6 +21,11 @@
   display: none;
   background-color: transparent;
   border: none;
+  color: var(--pico-h1-color);
+}
+
+.menuMobileButton svg {
+  color: var(--pico-h1-color);
 }
 
 @media screen and (width <= 800px) {
