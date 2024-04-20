@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'preact/hooks';
-import './app.css';
+import type { priceAPIResponse } from './types';
 
-interface priceAPIResponse extends Response {
-	compra: number;
-	venta: number;
-	casa: string;
-	nombre: string;
-	moneda: string;
-	fechaActualizacion: string;
-};
+import { CurrencySection } from './components/currencySection/currencySection';
 
 export function App() {
 	const [data, setData]: [priceAPIResponse[], Function] = useState([]);
 
+	/*
 	const getPriceData = async () => {
 		const response: Response = await fetch('https://dolarapi.com/v1/dolares');
 
@@ -30,6 +24,6 @@ export function App() {
 		}
 		getPriceData();
 	}, []);
-
-	return <h1>DólAR</h1>;
+*/
+	return <CurrencySection principal={data[0]} others={data} />;
 }
