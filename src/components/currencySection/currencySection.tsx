@@ -12,7 +12,7 @@ export function CurrencySection({
 		<section className={container}>
 			<div className={otherCurrencies}>
 				{currencies.map(({ casa, nombre, compra, venta }) => (
-					<article key={casa} className={currencyCard}>
+					<article key={`${casa}${nombre}`} id={`${casa}${nombre}`} className={currencyCard}>
 						<h2 className={name}>{nombre}</h2>
 						<div className={currencyInfo}>
 							<div>

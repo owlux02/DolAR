@@ -26,10 +26,8 @@ export function App() {
 		const data = localStorage.getItem('data');
 		if (data) {
 			setData(JSON.parse(data));
-			console.log('ee');
 		} else {
 			getPriceData();
-			console.log('e');
 		}
 	}, []);
 
