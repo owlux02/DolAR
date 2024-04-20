@@ -1,45 +1,32 @@
 import type { priceAPIResponse } from '../../types';
+import styles from './currencySection.module.css';
 
 export function CurrencySection({
-	principal,
-	others,
+	currencies,
 }: {
-	principal: priceAPIResponse;
-	others: priceAPIResponse[];
+	currencies: priceAPIResponse[];
 }) {
+	const { container, currencyCard, currencyInfo, name, description, price, otherCurrencies } = styles;
+
 	return (
-		<section>
-			<article className="principal_currency">
-				<h2>{principal.nombre}</h2>
-				<div>
-					<div>
-						<h3>Compra</h3>
-						<span>{principal.compra}</span>
-					</div>
-					<div>
-						<h3>Venta</h3>
-						<span>{principal.venta}</span>
-					</div>
-				</div>
-				<small>Actualizado el {principal.fechaActualizacion}</small>
-			</article>
-			<article className="other_currencies">
-				{others.map((other) => (
-					<div key={other.casa}>
-						<h2>{other.nombre}</h2>
-						<div>
+		<section className={container}>
+			<div className={otherCurrencies}>
+				{currencies.map(({ casa, nombre, compra, venta }) => (
+					<article key={casa} className={currencyCard}>
+						<h2 className={name}>{nombre}</h2>
+						<div className={currencyInfo}>
 							<div>
-								<h3>Compra</h3>
-								<span>{principal.compra}</span>
+								<h3 className={description}>Compra</h3>
+								<span className={price}>${compra}</span>
 							</div>
 							<div>
-								<h3>Venta</h3>
-								<span>{principal.venta}</span>
+								<h3 className={description}>Venta</h3>
+								<span className={price}>${venta}</span>
 							</div>
 						</div>
-					</div>
+					</article>
 				))}
-			</article>
+			</div>
 		</section>
 	);
 }

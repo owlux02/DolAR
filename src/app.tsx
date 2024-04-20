@@ -6,14 +6,19 @@ import { CurrencySection } from './components/currencySection/currencySection';
 export function App() {
 	const [data, setData]: [priceAPIResponse[], Function] = useState([]);
 
-	/*
 	const getPriceData = async () => {
-		const response: Response = await fetch('https://dolarapi.com/v1/dolares');
+		try {
+			const response: Response = await fetch('https://dolarapi.com/v1/dolares');
+			if (response.ok) {
+				const data = await response.json();
+				setData(data);
 
-		if (response.ok) {
-			const data = await response.json();
-			setData(data);
-			localStorage.setItem('data', JSON.stringify(data));
+				localStorage.setItem('data', JSON.stringify(data));
+			} else {
+				throw new Error(`HTTP Error: ${response.status}`);
+			}
+		} catch (error) {
+			console.error(`Error during request: ${error}`);
 		}
 	};
 
@@ -21,9 +26,12 @@ export function App() {
 		const data = localStorage.getItem('data');
 		if (data) {
 			setData(JSON.parse(data));
+			console.log('ee');
+		} else {
+			getPriceData();
+			console.log('e');
 		}
-		getPriceData();
 	}, []);
-*/
-	return <CurrencySection principal={data[0]} others={data} />;
+
+	return <>{data.length > 0 ? <CurrencySection currencies={data} /> : <p>Loading...</p>}</>;
 }

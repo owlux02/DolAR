@@ -8,9 +8,10 @@ export function Nav() {
 			<h1 className={title}>DólAR</h1>
 
 			<div className={links}>
-				<a href="">Inicio</a>
-				<a href="">Cotizaciones en Euro</a>
-				<a href="">Conversión de divisas</a>
+				<a href="/">Inicio</a>
+				<a href="https://github.com/martinval11/dolar" target="_blank" rel="noopener noreferrer">
+					GitHub
+				</a>
 			</div>
 		</nav>
 	);
