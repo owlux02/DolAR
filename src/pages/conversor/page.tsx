@@ -2,6 +2,29 @@ import { useRef, useState } from 'preact/hooks';
 import type { priceAPIResponse } from '../../types';
 
 import styles from './conversor.module.css';
+import { getCurrency } from '../otherCurrencies/page';
+
+const updateData = async () => {
+	try {
+		const eur = await getCurrency('eur');
+		const brl = await getCurrency('brl');
+		const clp = await getCurrency('clp');
+		const uyu = await getCurrency('uyu');
+
+		sessionStorage.setItem('dataOtherCurrencies', JSON.stringify([eur, brl, clp, uyu]));
+
+		const response: Response = await fetch('https://dolarapi.com/v1/dolares');
+		if (response.ok) {
+			const data = await response.json();
+
+			sessionStorage.setItem('data', JSON.stringify(data));
+		} else {
+			throw new Error(`HTTP Error: ${response.status}`);
+		}
+	} catch (error) {
+		console.error(`Error during request: ${error}`);
+	}
+};
 
 export function Conversor() {
 	const [firstCurrency, setFirstCurrency] = useState('Oficial');
@@ -33,14 +56,14 @@ export function Conversor() {
 			const secondCurrencyData = mergedData.find((currency: priceAPIResponse) => currency.nombre === secondCurrency);
 
 			if (firstCurrencyData && secondCurrencyData && valueToConvertRef.current) {
-				const inputValue = parseFloat(valueToConvertRef.current.value); // Convertimos el valor a número
-				if (!isNaN(inputValue)) {
-					const conversionRate = (firstCurrencyData.venta / secondCurrencyData.venta) * inputValue;
-
-					setOutput(Number(conversionRate.toFixed(2)));
-				}
+				const inputValue = parseFloat(valueToConvertRef.current.value);
+				const conversionRate = (firstCurrencyData.venta / secondCurrencyData.venta) * inputValue;
+				setOutput(Number(conversionRate.toFixed(2)));
 			}
+			return;
 		}
+		await updateData();
+		convertCurrencies(event); // Recursion
 	};
 
 	const invertCurrencies = () => {
@@ -55,7 +78,7 @@ export function Conversor() {
 					<div>
 						<label htmlFor="1st_currency">Primera divisa</label>
 						<div className={inputFlex}>
-							<input type="number" placeholder="0" id="1st_currency" ref={valueToConvertRef} required />
+							<input type="number" placeholder="0" id="1st_currency" ref={valueToConvertRef} min={1} required />
 							<select
 								name="1st_currency_options"
 								id="1st_currency_options"

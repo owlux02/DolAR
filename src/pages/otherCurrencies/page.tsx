@@ -3,7 +3,7 @@ import type { priceAPIResponse } from '../../types';
 
 import { CurrencySection } from '../../components/currencySection/currencySection';
 
-const getCurrency = async (code: string) => {
+export const getCurrency = async (code: string) => {
 	try {
 		const response: Response = await fetch(`https://dolarapi.com/v1/cotizaciones/${code}`);
 		if (response.ok) {
