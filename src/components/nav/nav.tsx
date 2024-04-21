@@ -4,11 +4,15 @@ import styles from './nav.module.css';
 
 export function Nav() {
 	const [openMenu, setOpenMenu] = useState(false);
-	const { nav, links, title, linksMobile, menuMobileButton } = styles;
+	const { nav, links, title, linksMobile, titleLink, menuMobileButton } = styles;
 
 	return (
 		<nav className={nav}>
-			<h1 className={title}>DólAR</h1>
+			<h1 className={title}>
+				<Link href="/" className={titleLink}>
+					DólAR
+				</Link>
+			</h1>
 
 			<div className={links}>
 				<Link href="/">Inicio</Link>

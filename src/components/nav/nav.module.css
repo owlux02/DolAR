@@ -12,6 +12,11 @@
   margin-bottom: 0;
 }
 
+.titleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 .links {
   display: flex;
   gap: 1rem;

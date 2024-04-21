@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks';
 import type { priceAPIResponse } from './types';
 
 import { CurrencySection } from './components/currencySection/currencySection';
+import { LoadingSpiner } from './components/loadingSpinner/loadingSpinner';
 
 export function App() {
 	const [data, setData]: [priceAPIResponse[], Function] = useState([]);
@@ -31,5 +32,5 @@ export function App() {
 		}
 	}, []);
 
-	return <>{data.length > 0 ? <CurrencySection currencies={data} /> : <p>Loading...</p>}</>;
+	return <>{data.length > 0 ? <CurrencySection currencies={data} /> : <LoadingSpiner />}</>;
 }
